@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     links:
-      - api
+      - back
   back:
     build: dwf-be
     restart: always
@@ -15,7 +15,7 @@ services:
     links:
       - db
   db:
-    build: db
+    build: dwf-db
     env_file:
       - db_auth.env
     ports:
